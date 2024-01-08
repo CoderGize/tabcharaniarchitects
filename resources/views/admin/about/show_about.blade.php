@@ -21,19 +21,24 @@
                             <h6>About Section</h6>
                         </div>
 
-                        <a href="{{ url('/admin/update_about', $about->id) }}" class="btn btn-dark w-10 mx-auto">
-                            <i class="bi bi-pencil"></i>
-                            Update
-                        </a>
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <div class="d-flex justify-content-center">
+
+                                    @include('admin.about.update_about')
+
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="card-body px-0 pt-0 mt-4 pb-2">
                             <div class="row text-center">
                                 <div class="col-12">
                                     <label for="">
                                         Image
-                                        <span class="text-danger fw-light text-sm">
+                                        {{-- <span class="text-danger fw-light text-sm">
                                             **1900px Width & 1268px Height**
-                                        </span>
+                                        </span> --}}
                                     </label>
 
                                     <div class="">

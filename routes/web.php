@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\CmsController;
 use App\Http\Controllers\Admin\SocialController;
 use App\Http\Controllers\Admin\UserController;
@@ -37,6 +38,11 @@ Route::prefix('/admin')->middleware('auth')->group(function () {
     Route::get('/show_social',[SocialController::class,'show_social']);
     Route::post('/update_social_confirm/{id}',[SocialController::class,'update_social_confirm']);
     Route::get('/update_social/{id}',[SocialController::class,'update_social']);
+
+    // {{ About }}
+    Route::get('/show_about',[AboutController::class,'show_about']);
+    Route::post('/update_about/{id}',[AboutController::class,'update_about']);
+
 
 });
 
