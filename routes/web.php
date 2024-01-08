@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\CmsController;
+use App\Http\Controllers\Admin\LandingController;
 use App\Http\Controllers\Admin\SocialController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
@@ -42,6 +43,10 @@ Route::prefix('/admin')->middleware('auth')->group(function () {
     // {{ About }}
     Route::get('/show_about',[AboutController::class,'show_about']);
     Route::post('/update_about/{id}',[AboutController::class,'update_about']);
+
+    // {{ Landing }}
+    Route::get('/show_landing',[LandingController::class,'show_landing']);
+    Route::post('/update_landing/{id}',[LandingController::class,'update_landing']);
 
 
 });

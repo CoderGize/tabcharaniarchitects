@@ -7,7 +7,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Update Service Page
+                <h5 class="modal-title" id="exampleModalLabel">Update About Page
                 </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -37,20 +37,17 @@
 
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">
-
                             Text1
                         </label>
-                        <input type="textarea" name="text1" class="form-control" value="{{ $about->text1 }}"  >
+                        <textarea name="text1" class="form-control" rows="4" cols="50">{{ $about->text1 }}</textarea>
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">
-
                             Text2
                         </label>
-                        <input type="textarea" name="text2" class="form-control" value="{{ $about->text2 }}"  >
+                        <textarea name="text2" class="form-control" rows="4" cols="50">{{ $about->text2 }}</textarea>
                     </div>
-
 
                 </div>
 
