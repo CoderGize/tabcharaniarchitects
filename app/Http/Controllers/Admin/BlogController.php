@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\About;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class LandingController extends Controller
+class BlogController extends Controller
 {
     //
 }

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('landings', function (Blueprint $table) {
             $table->id();
-            $table->string("img");
-            $table->longText("text")->nullable();
+            $table->string('img');
+            $table->longText('text')->nullable();
             $table->timestamps();
         });
     }

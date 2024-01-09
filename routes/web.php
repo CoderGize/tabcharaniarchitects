@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\BrandeeController;
 use App\Http\Controllers\Admin\CmsController;
+use App\Http\Controllers\Admin\ExpertiseController;
 use App\Http\Controllers\Admin\LandingController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\SocialController;
@@ -56,6 +58,17 @@ Route::prefix('/admin')->middleware('auth')->group(function () {
     Route::get('/delete_partner/{id}', [PartnerController::class, 'delete_partner']);
 
 
+    //{{ Expertise }}
+    Route::get('/show_expertise', [ExpertiseController::class, 'show_expertise']);
+    Route::post('/add_expertise', [ExpertiseController::class, 'add_expertise']);
+    Route::post('/update_expertise/{id}',[ExpertiseController::class,'update_expertise']);
+    Route::get('/delete_expertise/{id}', [ExpertiseController::class, 'delete_expertise']);
+
+    //{{ brandee }}
+    Route::get('/show_brandee', [BrandeeController::class, 'show_brandee']);
+    Route::post('/add_brandee', [BrandeeController::class, 'add_brandee']);
+    Route::post('/update_brandee/{id}',[BrandeeController::class,'update_brandee']);
+    Route::get('/delete_brandee/{id}', [BrandeeController::class, 'delete_brandee']);
 
 });
 

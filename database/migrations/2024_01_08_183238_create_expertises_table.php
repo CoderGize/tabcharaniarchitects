@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('expertises', function (Blueprint $table) {
             $table->id();
+            $table->string('img');
+            $table->string('title');
+            $table->longText('text_lg');
+            $table->string('text_sm');
             $table->timestamps();
         });
     }
