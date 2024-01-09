@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\BrandeeController;
 use App\Http\Controllers\Admin\CmsController;
 use App\Http\Controllers\Admin\ExpertiseController;
@@ -64,12 +65,18 @@ Route::prefix('/admin')->middleware('auth')->group(function () {
     Route::post('/update_expertise/{id}',[ExpertiseController::class,'update_expertise']);
     Route::get('/delete_expertise/{id}', [ExpertiseController::class, 'delete_expertise']);
 
-    //{{ brandee }}
+    //{{ Brandee }}
     Route::get('/show_brandee', [BrandeeController::class, 'show_brandee']);
     Route::post('/add_brandee', [BrandeeController::class, 'add_brandee']);
     Route::post('/update_brandee/{id}',[BrandeeController::class,'update_brandee']);
     Route::get('/delete_brandee/{id}', [BrandeeController::class, 'delete_brandee']);
 
+
+    //{{ Blog }}
+    Route::get('/show_blog', [BlogController::class, 'show_blog']);
+    Route::post('/add_blog', [BlogController::class, 'add_blog']);
+    Route::post('/update_blog/{id}',[BlogController::class,'update_blog']);
+    Route::get('/delete_blog/{id}', [BlogController::class, 'delete_blog']);
 });
 
 Route::get('/', function () {
