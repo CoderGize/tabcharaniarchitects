@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\CmsController;
 use App\Http\Controllers\Admin\ExpertiseController;
 use App\Http\Controllers\Admin\LandingController;
 use App\Http\Controllers\Admin\PartnerController;
+use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\SocialController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
@@ -77,6 +78,12 @@ Route::prefix('/admin')->middleware('auth')->group(function () {
     Route::post('/add_blog', [BlogController::class, 'add_blog']);
     Route::post('/update_blog/{id}',[BlogController::class,'update_blog']);
     Route::get('/delete_blog/{id}', [BlogController::class, 'delete_blog']);
+
+    //{{ Portfolio }}
+    Route::get('/show_portfolio', [PortfolioController::class, 'show_portfolio']);
+    Route::post('/add_portfolio', [PortfolioController::class, 'add_portfolio']);
+    Route::post('/update_portfolio/{id}',[PortfolioController::class,'update_portfolio']);
+    Route::get('/delete_portfolio/{id}', [PortfolioController::class, 'delete_portfolio']);
 });
 
 Route::get('/', function () {
