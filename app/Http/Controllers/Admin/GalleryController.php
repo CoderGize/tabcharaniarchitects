@@ -13,62 +13,62 @@ use Intervention\Image\Facades\Image;
 
 class GalleryController extends Controller
 {
-    public function show_gallery($id){
+    public function show_gallery($id)
+    {
 
-        $gallery = Gallery::where('portfolio_id', $id)->first();
+        $gallery = Gallery::where('portfolio_id', $id)->latest()->paginate(10);
+
         $portfolio = Portfolio::find($id);
 
         return view('admin.gallery.show_gallery',compact('gallery','portfolio'));
     }
 
-    // public function show_all_gallery($id){
 
-    //     $gallery =  Gallery::where('portfolio_id', $id)->all();
-    //     $portfolio = Portfolio::find($id);
-    //     $sectionID=$portfolio->section_id;
-
-    //     return view('admin.gallery.show_all_gallery',compact('gallery'));
-
-    // }
-
-    public function show_all_gallery($sectionId) {
-
-        $portfolio = Portfolio::where('section_id', $sectionId)->get();
-        $gallery  = Gallery::where('portfolio_id', $portfolio->id)->get();
-
-
-        return view('admin.gallery.show_all_gallery', compact('portfolio', 'gallery'));
-    }
-
-
-    public function add_gallery(Request $request , $id){
+    public function add_gallery(Request $request, $id)
+    {
+        $request->validate([
+            'img.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
 
         $portfolio = Portfolio::find($id);
-        $gallery=new Gallery;
 
-        $gallery->portfolio_id=$portfolio->id;
+        if ($request->hasFile('img')) {
+            $images = $request->file('img');
 
-        $img = $request->img;
+            foreach ($images as $image) {
+                $gallery = new Gallery;
+                $gallery->portfolio_id = $portfolio->id;
 
+                $imgname = Str::random(20) . '.' . $image->getClientOriginalExtension();
 
-        if($img)
-        {
-            $imgname = Str::random(20) . '.' . $img->getClientOriginalExtension();
+                // Save the original image
+                $image->move('gallery', $imgname);
 
-            //Save the original image
-            $request->img->move('gallery', $imgname);
+                // Change the image quality using Intervention Image
+                $img = Image::make(public_path('gallery/' . $imgname));
+                $img->encode($img->extension, 10)->save(public_path('gallery/' . $imgname));
 
-            //change the image quality using Intervention Image
-            $img = Image::make(public_path('gallery/' . $imgname));
-
-            $img->encode($img->extension, 10)->save(public_path('gallery/' . $imgname));
-
-            $gallery->img = $imgname;
+                $gallery->img = $imgname;
+                $gallery->save();
+            }
         }
 
-        $gallery->save();
+        return redirect()->back()->with('message', 'Gallery added');
+    }
 
-        return redirect()->back()->with('message','gallery Added');
+    public function delete_gallery($id)
+    {
+
+        $gallery = Gallery::find($id);
+
+        $gallery->delete();
+
+        return redirect()->back()->with('message', 'Gallery Deleted');
+
 
     }
+
+   
+
+
 }

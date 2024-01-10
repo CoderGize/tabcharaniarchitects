@@ -23,7 +23,7 @@
 
                             Title
                         </label>
-                        <input type="text" name="title" class="form-control" required>
+                        <input type="text" name="title" class="form-control" required placeholder="Title">
                     </div>
 
                 </div>

@@ -100,7 +100,10 @@
                                                         class="text-success font-weight-bold text-xs"
                                                         data-toggle="tooltip" data-original-title="Edit portfolio"
                                                         >
-                                                        Galery
+                                                        Gallery
+                                                        
+                                                        <i class="bi bi-image"></i>
+
 
                                                     </a>
                                                 </td>

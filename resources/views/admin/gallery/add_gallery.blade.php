@@ -1,6 +1,6 @@
 <button type="button" class="btn btn-dark mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
     <i class="me-2 fs-6 bi bi-plus-lg"></i>
-    Add Gallery
+    Add Image
 </button>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -20,7 +20,7 @@
                         <label for="exampleFormControlInput1" class="form-label">
                             Image
                         </label>
-                        <input type="file" name="img" class="form-control" required>
+                        <input type="file" name="img[]" class="form-control" multiple accept="image/*" required>
                     </div>
 
 

@@ -13,12 +13,15 @@
         @include('admin.navbar')
         <!-- End Navbar -->
         <div class="container-fluid py-4">
-
             <div class="row">
                 <div class="col-12">
                     <div class="card mb-4">
-                        <div class="card-header pb-0">
-                            <h6>Gallery Section</h6>
+                        <div class="card-header pb-0 ">
+                            <a href="{{ url('/admin/show_portfolio') }}" class="btn btn-dark">
+                                <i class="bi bi-arrow-left"></i>
+                                back
+                            </a>
+                            {{-- <h6>Gallery</h6> --}}
                         </div>
 
                         <div class="row mb-3">
@@ -31,53 +34,59 @@
                             </div>
                         </div>
 
-                        <div class="card-body px-0 pt-0 mt-4 pb-2">
-                            <div class="row text-center">
-                                <div class="col-12">
-                                    <label for="image">Image</label>
+                        <div class="card-body px-0 pt-0 pb-2">
+                            <div class="table-responsive p-0">
+                                <table class="table align-items-center mb-0">
+                                    <thead>
+                                        <tr class="text-center">
 
-                                    <div>
-                                        @if ($gallery && $gallery->img != null)
-                                        <a href="{{ route('show_all_gallery', ['sectionId' => $portfolio->section_id]) }}">
-                                                <img src="/gallery/{{ $gallery->img }}" class="w-25 m-auto" alt="Gallery Image">
-                                            </a>
-                                        @else
-                                            <p class="text-danger">No Data</p>
-                                        @endif
-                                    </div>
-                                </div>
+
+                                            <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+
+                                            Image
+                                        </th>
+
+
+
+
+                                            <th class="text-secondary opacity-7"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @forelse ($gallery as $data)
+                                            <tr class="text-center">
+
+
+                                                <td>
+                                                    <p class="text-xs font-weight-bold mb-0">
+                                                        <img src="/gallery/{{ $data->img }}" async class="d-block m-auto"
+                                                        width="70px" alt="">                                                    </p>
+                                                </td>
+
+                                                <td class="align-middle">
+                                                    <a href="{{ url('admin/delete_gallery', $data->id) }}"
+                                                        class="text-danger font-weight-bold text-xs"
+                                                        data-toggle="tooltip" data-original-title="Edit gallery"
+                                                        onclick="return confirm('Are you sure you want to delete this gallery?')">
+                                                        Delete
+                                                        <i class="bi bi-trash"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        @empty
+                                            <tr>
+                                                <td colspan="16">
+                                                    <p class="text-xs text-center text-danger font-weight-bold mb-0">
+                                                        No Data !
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        @endforelse
+                                    </tbody>
+                                </table>
+                                {{ $gallery->render('admin.pagination') }}
                             </div>
-                        </div>
-
-
-
-
-
-                            <div class="row text-center my-3">
-                                <div class="col-6">
-                                    <label for="">
-                                        Title
-                                    </label>
-                                    <p>
-                                        {{ $portfolio->title }}
-                                    </p>
-                                </div>
-
-                                <div class="col-6">
-                                    <label for="">
-                                        Text
-                                    </label>
-                                    <p>
-                                        {{ $portfolio->text }}
-                                    </p>
-                                </div>
-
-                            </div>
-
-
-
-
-
                         </div>
                     </div>
                 </div>

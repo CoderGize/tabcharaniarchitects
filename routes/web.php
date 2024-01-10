@@ -89,14 +89,13 @@ Route::prefix('/admin')->middleware('auth')->group(function () {
     //{{ Gallery }}
     Route::get('/show_gallery/{id}', [GalleryController::class, 'show_gallery']);
     Route::post('/add_gallery/{id}', [GalleryController::class, 'add_gallery']);
-    // Route::post('/update_gallery/{id}',[galleryController::class,'update_gallery']);
-    // Route::get('/delete_gallery/{id}', [galleryController::class, 'delete_gallery']);
+    Route::get('/delete_gallery/{id}', [galleryController::class, 'delete_gallery']);
     Route::get('gallery/show_all_gallery/{sectionId}', [GalleryController::class, 'show_all_gallery'])->name('show_all_gallery');
 
 });
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
 Route::middleware([
