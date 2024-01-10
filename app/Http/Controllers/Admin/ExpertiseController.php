@@ -52,7 +52,7 @@ class ExpertiseController extends Controller
 
         $expertise->save();
 
-        return redirect()->back()->with('messgae','Expertiser Added');
+        return redirect()->back()->with('message','Expertise Added');
 
 
     }

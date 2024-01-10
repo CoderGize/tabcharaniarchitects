@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\BrandeeController;
 use App\Http\Controllers\Admin\CmsController;
 use App\Http\Controllers\Admin\ExpertiseController;
+use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\LandingController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\PortfolioController;
@@ -84,6 +85,14 @@ Route::prefix('/admin')->middleware('auth')->group(function () {
     Route::post('/add_portfolio', [PortfolioController::class, 'add_portfolio']);
     Route::post('/update_portfolio/{id}',[PortfolioController::class,'update_portfolio']);
     Route::get('/delete_portfolio/{id}', [PortfolioController::class, 'delete_portfolio']);
+
+    //{{ Gallery }}
+    Route::get('/show_gallery/{id}', [GalleryController::class, 'show_gallery']);
+    Route::post('/add_gallery/{id}', [GalleryController::class, 'add_gallery']);
+    // Route::post('/update_gallery/{id}',[galleryController::class,'update_gallery']);
+    // Route::get('/delete_gallery/{id}', [galleryController::class, 'delete_gallery']);
+    Route::get('gallery/show_all_gallery/{sectionId}', [GalleryController::class, 'show_all_gallery'])->name('show_all_gallery');
+
 });
 
 Route::get('/', function () {

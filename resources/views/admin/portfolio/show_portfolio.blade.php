@@ -96,7 +96,7 @@
 
 
                                                 <td class="align-middle">
-                                                    <a href="{{ url('admin/show_galery', $data->id) }}"
+                                                    <a href="{{ url('admin/show_gallery', $data->id) }}"
                                                         class="text-success font-weight-bold text-xs"
                                                         data-toggle="tooltip" data-original-title="Edit portfolio"
                                                         >
