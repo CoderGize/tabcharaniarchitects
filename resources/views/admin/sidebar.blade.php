@@ -46,62 +46,9 @@
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link rounded-3 {{ 'admin/show_process' == request()->path() ? 'main-color' : '' }}"
-                    href="{{ url('/admin/show_process') }}">
-                    <div
-                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="bi bi-clipboard-data-fill text-info text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Process</span>
-                </a>
-            </li>
 
-            <li class="nav-item">
-                <a class="nav-link rounded-3 {{ 'admin/show_strategy' == request()->path() ? 'main-color' : '' }}"
-                    href="{{ url('/admin/show_strategy') }}">
-                    <div
-                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="bi bi-info-circle text-primary text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Strategy</span>
-                </a>
-            </li>
 
-            <li class="nav-item">
-                <a class="nav-link rounded-3 {{ 'admin/show_category' == request()->path() ? 'main-color' : '' }}"
-                    href="{{ url('/admin/show_category') }}">
-                    <div
-                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="bi bi-bookmarks-fill text-primary text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Category</span>
-                </a>
-            </li>
 
-            <li class="nav-item">
-                <a class="nav-link rounded-3 {{ 'admin/show_service' == request()->path() ? 'main-color' : '' }}"
-                    href="{{ url('/admin/show_service') }}">
-                    <div
-                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        {{-- <i class="bi bi-collection text-danger text-sm opacity-10"></i> --}}
-                        <i class="bi bi-motherboard-fill text-danger text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Services</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link rounded-3 {{ 'admin/show_service_page' == request()->path() ? 'main-color' : '' }}"
-                    href="{{ url('/admin/show_service_page') }}">
-                    <div
-                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        {{-- <i class="bi bi-collection text-danger text-sm opacity-10"></i> --}}
-                        <i class="bi bi-motherboard-fill text-danger text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Service Page</span>
-                </a>
-            </li>
 
 
             <li class="nav-item">
@@ -153,17 +100,6 @@
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link rounded-3 {{ 'admin/show_testimonial' == request()->path() ? 'main-color' : '' }}"
-                    href="{{ url('/admin/show_testimonial') }}">
-                    <div
-                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        {{-- <i class="bi bi-collection text-danger text-sm opacity-10"></i> --}}
-                        <i class="bi bi-motherboard-fill text-danger text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Testimonial</span>
-                </a>
-            </li>
 
 
 
@@ -190,16 +126,7 @@
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link rounded-3 {{ 'admin/show_pop' == request()->path() ? 'main-color' : '' }}"
-                    href="{{ url('/admin/show_pop') }}">
-                    <div
-                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="bi bi-bullseye text-primary text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Pop</span>
-                </a>
-            </li>
+       
 
 
 

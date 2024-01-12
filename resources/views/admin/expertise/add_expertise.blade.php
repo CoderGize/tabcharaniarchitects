@@ -27,21 +27,21 @@
                         <label for="exampleFormControlInput1" class="form-label">
                             Title
                         </label>
-                        <input type="text" name="title" class="form-control" required>
+                        <input type="text" name="title" class="form-control" placeholder="Title" required>
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">
                             Text Large
                         </label>
-                        <textarea name="text_lg" class="form-control" rows="4" cols="50"></textarea>
+                        <textarea name="text_lg" class="form-control" rows="4" cols="50" placeholder="Text Large"></textarea>
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">
                             Text Small
                         </label>
-                        <textarea name="text_sm" class="form-control" rows="4" cols="50"></textarea>
+                        <textarea name="text_sm" class="form-control" rows="4" cols="50" placeholder="Text Small"></textarea>
                     </div>
 
 
