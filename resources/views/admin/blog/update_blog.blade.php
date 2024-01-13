@@ -26,7 +26,7 @@
                         </label>
                         <div class="d-flex flex-column align-items">
                             <img src="/blog/{{ $data->img }}" width="100px" class="mb-2" alt="Image 1">
-                            <input type="file" name="img" class="form-control-file" id="exampleFormControlFile1">
+                            <input type="file" name="img" class="form-control" id="exampleFormControlFile1">
                         </div>
                     </div>
 
@@ -55,7 +55,7 @@
                         <textarea name="text" class="form-control" rows="4" cols="50">{{ $data->text }}</textarea>
                     </div>
 
-                   
+
 
 
                 </div>

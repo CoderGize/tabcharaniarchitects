@@ -18,11 +18,21 @@
 
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">
-                            Image
+                           First Image
                         </label>
                         <div class="d-flex flex-column align-items">
-                            <img src="/about/{{ $about->img }}" width="100px" class="mb-2" alt="Image 1">
-                            <input type="file" name="img" class="form-control-file" id="exampleFormControlFile1">
+                            <img src="/about/{{ $about->img1 }}" width="100px" class="mb-2" alt="Image 1">
+                            <input type="file" name="img1" class="form-control" id="exampleFormControlFile1">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">
+                           Second Image
+                        </label>
+                        <div class="d-flex flex-column align-items">
+                            <img src="/about/{{ $about->img2 }}" width="100px" class="mb-2" alt="Image 1">
+                            <input type="file" name="img2" class="form-control" id="exampleFormControlFile1">
                         </div>
                     </div>
 
@@ -30,26 +40,38 @@
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">
 
-                            Name
+                           First Name
                         </label>
-                        <input type="text" name="name" class="form-control" value="{{ $about->name }}" >
+                        <input type="text" name="name1" class="form-control" value="{{ $about->name1 }}" >
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">
-                            Text1
+
+                           Second Name
+                        </label>
+                        <input type="text" name="name2" class="form-control" value="{{ $about->name2 }}" >
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">
+                           First Text
                         </label>
                         <textarea name="text1" class="form-control" rows="4" cols="50">{{ $about->text1 }}</textarea>
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">
-                            Text2
+                           Second Text
                         </label>
                         <textarea name="text2" class="form-control" rows="4" cols="50">{{ $about->text2 }}</textarea>
                     </div>
 
                 </div>
+
+
+
+
 
                 <div class="modal-footer">
 

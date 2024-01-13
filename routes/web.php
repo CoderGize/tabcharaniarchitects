@@ -95,6 +95,7 @@ Route::prefix('/admin')->middleware('auth')->group(function () {
 
 });
 
+
 /*
 |--------------------------------------------------------------------------
 | API Routes

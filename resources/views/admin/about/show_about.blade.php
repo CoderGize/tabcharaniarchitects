@@ -33,17 +33,34 @@
 
                         <div class="card-body px-0 pt-0 mt-4 pb-2">
                             <div class="row text-center">
-                                <div class="col-12">
+                                <div class="col-6">
                                     <label for="">
-                                        Image
+                                       First Image
                                         {{-- <span class="text-danger fw-light text-sm">
                                             **1900px Width & 1268px Height**
                                         </span> --}}
                                     </label>
 
                                     <div class="">
-                                        @if ($about->img != null)
-                                            <img src="/about/{{ $about->img }}" class="w-25 m-auto" alt="">
+                                        @if ($about->img1 != null)
+                                            <img src="/about/{{ $about->img1 }}" class="w-25 m-auto" alt="">
+                                        @else
+                                            <p class="text-danger">No Data</p>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <label for="">
+                                       Second Image
+                                        {{-- <span class="text-danger fw-light text-sm">
+                                            **1900px Width & 1268px Height**
+                                        </span> --}}
+                                    </label>
+
+                                    <div class="">
+                                        @if ($about->img2 != null)
+                                            <img src="/about/{{ $about->img2 }}" class="w-25 m-auto" alt="">
                                         @else
                                             <p class="text-danger">No Data</p>
                                         @endif
@@ -52,12 +69,21 @@
                             </div>
 
                             <div class="row text-center my-3">
-                                <div class="col-12">
+                                <div class="col-6">
                                     <label for="">
-                                        Name
+                                       First Name
                                     </label>
                                     <p>
-                                        {{ $about->name }}
+                                        {{ $about->name1 }}
+                                    </p>
+                                </div>
+
+                                <div class="col-6">
+                                    <label for="">
+                                       Second Name
+                                    </label>
+                                    <p>
+                                        {{ $about->name2 }}
                                     </p>
                                 </div>
 
