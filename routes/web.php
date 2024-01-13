@@ -11,6 +11,8 @@ use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\SocialController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\ApiController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -93,6 +95,21 @@ Route::prefix('/admin')->middleware('auth')->group(function () {
     Route::get('gallery/show_all_gallery/{sectionId}', [GalleryController::class, 'show_all_gallery'])->name('show_all_gallery');
 
 });
+
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+*/
+Route::get('api/get-about',[ApiController::class,'getabout']);
+Route::get('api/get-landing',[ApiController::class,'getlanding']);
+Route::get('api/get-partner',[ApiController::class,'getpartner']);
+Route::get('api/get-expertise',[ApiController::class,'getexpertise']);
+Route::get('api/get-gallery',[ApiController::class,'getgallery']);
+Route::get('api/get-brandee',[ApiController::class,'getbrandee']);
+Route::get('api/get-blog',[ApiController::class,'getblog']);
+Route::get('api/get-portfolio',[ApiController::class,'getportfolio']);
+Route::get('api/get-social',[ApiController::class,'getsocial']);
 
 Route::get('/', function () {
     return redirect()->route('login');
